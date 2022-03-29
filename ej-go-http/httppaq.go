@@ -1,5 +1,41 @@
 package main
 
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
+
+type Response struct {
+	ID     string `json:"id"`
+	Name   string `json:"name"`
+	Status int    `json:"status"`
+}
+
+func main() {
+	fmt.Println("Calling API...")
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", "https://api.mercadolibre.com/sites/MLA", nil)
+	if err != nil {
+		fmt.Print(err.Error())
+	}
+
+	resp, err := client.Do(req)
+	defer resp.Body.Close()
+	bodyBytes, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Print(err.Error())
+	}
+
+	var responseObject Response
+	json.Unmarshal(bodyBytes, &responseObject)
+	fmt.Printf("API Response as struct %+v\n", responseObject)
+}
+
+//codigo viejo.
+/* package main
+
 import {
 	"net/http"
 	"fmt"
@@ -29,7 +65,7 @@ func main(){
 
 func GetCategories(siteID string)(Categories, error{
 	response := http.Get(siteID)
-	
+
 	bytes := ioutil.ReadAll(response.Bytes) //completar
 
 	var catgs Categories
@@ -37,23 +73,19 @@ func GetCategories(siteID string)(Categories, error{
 
 	return cats, nil
 }
-
-
-
-
-/*
-		url := ""
-		responseGet := http.Get(url)
-		responsePost := http.Post(url, body)
-
-		//data, err
-
-		var myVar myStruct
-		err := json.Unmarshal (bytes, &myVar)
-		fmt.Println(resp)
 */
 
+/*
+	url := ""
+	responseGet := http.Get(url)
+	responsePost := http.Post(url, body)
 
+	//data, err
+
+	var myVar myStruct
+	err := json.Unmarshal (bytes, &myVar)
+	fmt.Println(resp)
+*/
 
 /*
 func main(){
@@ -68,7 +100,7 @@ func main(){
 	fmt.Println(resp)
 }
 
- 
+
 
 	{
 		"nombre": "Pollo",
