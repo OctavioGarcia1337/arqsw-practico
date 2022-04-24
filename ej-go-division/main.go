@@ -12,12 +12,13 @@ func main() {
 
 	fmt.Println(div.Division(numerador, divisor))
 
-	/* //NO LO PROBE, SOLO LO COPIE PARA QUE ME QUEDE GUARDADO Y TESTEARLO EN CASA.
-	var err error
-	if err!= nil{
-		fmt.Println("Errors:", err.Error())
-		return
-	}
-	fmt.Println("Division:", divisor)
-	*/
 }
+
+/* //NO LO PROBE, SOLO LO COPIE PARA QUE ME QUEDE GUARDADO Y TESTEARLO EN CASA.
+var err error
+if err!= nil{
+	fmt.Println("Errors:", err.Error())
+	return
+}
+fmt.Println("Division:", divisor)
+*/

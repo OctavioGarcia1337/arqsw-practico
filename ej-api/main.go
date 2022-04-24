@@ -1,6 +1,6 @@
 package main
 
-import "github.com/MatiasLessio/ej-apis/apiCall"
+import "github.com/OctavioGarcia1337/arq-software/ej-api/apiCall"
 
 func main() {
 	cats, _ := apiCall.ApiCall()
