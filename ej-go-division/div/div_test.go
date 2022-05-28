@@ -1,9 +1,8 @@
 package div
 
 import (
-	"testing"
-
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 type TestCase struct {
@@ -47,15 +46,3 @@ func TestDivision(t *testing.T) {
 		})
 	}
 }
-
-/*
-func TestDivisionErrorByZero(t *testing.T) {
-	_, err := Division(8, 0)
-
-	if err == nil {
-
-		t.Error(err)
-		return
-	}
-}
-*/

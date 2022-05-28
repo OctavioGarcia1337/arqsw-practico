@@ -7,7 +7,6 @@ import (
 
 func main() {
 	engine := gin.New()
-	engine.POST("/login",
-		controllers.Login)
-	engine.Run(":8080")
+	engine.POST("/login", controllers.Login)
+	engine.Run(":3000")
 }

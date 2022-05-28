@@ -4,21 +4,29 @@ import (
 	"fmt"
 
 	"github.com/OctavioGarcia1337/arq-software/ej-go-division/div"
+	"github.com/OctavioGarcia1337/arq-software/ej-go-division/sum"
 )
 
 func main() {
-	var numerador float32 = 23
-	var divisor float32 = 0
+	// defers the execution of a function to the end
+	defer func() {
+		fmt.Println("Bye!")
+	}()
 
-	fmt.Println(div.Division(numerador, divisor))
+	// inputs
+	a, b := float64(20), float64(10)
+	fmt.Println("a = ", a)
+	fmt.Println("b = ", b)
 
+	// division
+	resultDiv, err := div.Division(a, b)
+	if err != nil {
+		fmt.Println("Error in division: ", err.Error())
+		return
+	}
+	fmt.Println("Div: ", resultDiv)
+
+	// sum
+	resultSum := sum.Sum(a, b)
+	fmt.Println("Sum: ", resultSum)
 }
-
-/* //NO LO PROBE, SOLO LO COPIE PARA QUE ME QUEDE GUARDADO Y TESTEARLO EN CASA.
-var err error
-if err!= nil{
-	fmt.Println("Errors:", err.Error())
-	return
-}
-fmt.Println("Division:", divisor)
-*/

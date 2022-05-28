@@ -1,4 +1,4 @@
-module github.com/OctavioGarcia1337/arq-software
+module github.com/OctavioGarcia1337/arq-software/ej-mvc
 
 go 1.18
 

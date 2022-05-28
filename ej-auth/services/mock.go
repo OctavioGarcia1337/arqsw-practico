@@ -1,6 +1,6 @@
 package services
 
-import "github.com/emikohmann/arq-software/ej-auth/domain"
+import "github.com/OctavioGarcia1337/arq-software/ej-auth/domain"
 
 type ServiceMock struct{}
 

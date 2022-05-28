@@ -1,4 +1,4 @@
-module github.com/OctavioGarcia1337/arq-software/ej-auth
+module github.com/OctavioGarcia1337/arq-software/ej-docker
 
 go 1.18
 

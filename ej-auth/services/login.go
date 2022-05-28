@@ -2,10 +2,9 @@ package services
 
 import (
 	"errors"
-	"strings"
-
 	"github.com/OctavioGarcia1337/arq-software/ej-auth/domain"
 	"github.com/OctavioGarcia1337/arq-software/ej-auth/utils"
+	"strings"
 )
 
 const (

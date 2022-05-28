@@ -4,11 +4,9 @@ import (
 	"errors"
 )
 
-func Division(num, div float32) (float32, error) {
-	if div == 0 {
-		err := errors.New("Error no se puede dividir por 0")
-		return -1, err
+func Division(a float64, b float64) (float64, error) {
+	if b == 0 {
+		return -1, errors.New("invalid zero divisor")
 	}
-	var res float32 = num / div
-	return res, nil
+	return a / b, nil
 }
